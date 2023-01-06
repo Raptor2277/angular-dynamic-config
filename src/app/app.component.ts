@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppConfigService } from 'src/services/appConfigService';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private appConfig: AppConfigService){
+    console.log(appConfig.base_url);
+  }
+ 
   title = 'angular-app';
 }
